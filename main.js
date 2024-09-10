@@ -8,19 +8,26 @@ Object.preventExtensions(book);
 book.pages = 350;
 console.log(book.pages);
 
+delete book.pages;
+console.log(book);
+
+
 Object.freeze(book);
 
 book.title = "Harry Potter and the Philosopher's Stone"
 console.log(book.title);
 
-const bookCopy = Object.assign ({}, book);
-console.log(bookCopy);
+delete book.author;
+console.log(book);
 
 
 Object.seal(book);
-
-delete book.author;
+book.rating = 5.5;
 console.log(book);
+
+
+const bookCopy = Object.assign ({}, book);
+console.log(bookCopy);
 
 delete bookCopy;
 console.log(book);
