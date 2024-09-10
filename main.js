@@ -1,21 +1,18 @@
-const person ={
-    name: "Ivan",
-    _age: "21",
+const car = {
+    brand: "AUDI",
+    model: "A6",
+    year: "2010"
 };
 
-Object.defineProperty(person, "gender", {
-    value: "male",
-    writable: false,   
-    enumerable: true,
-    configurable: true 
-});
+Object.preventExtensions(car);
 
-person.name = "Marko";
-console.log(person, name);
+car.color = "black";
+console.log(car);
 
-for(let key in person){
-    console.log(key);  
-};
+const carCopy = Object.assign({}, car);
+Object.seal(carCopy);
 
-delete person._age;
-console.log(person);
+delete carCopy.year;
+console.log(carCopy);
+
+
