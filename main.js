@@ -3,12 +3,6 @@ const person ={
     _age: "21",
 };
 
-const nameDescriptor = Object.getOwnPropertyDescriptor(person, "name");
-console.log(nameDescriptor);
-
-const ageDescriptor = Object.getOwnPropertyDescriptor(person, "_age");
-console.log(ageDescriptor);
-
 Object.defineProperty(person, "gender", {
     value: "male",
     writable: false,   
@@ -16,5 +10,12 @@ Object.defineProperty(person, "gender", {
     configurable: true 
 });
 
-const genderDescriptor = Object.getOwnPropertyDescriptor(person, "gender");
-console.log(genderDescriptor);
+person.name = "Marko";
+console.log(person, name);
+
+for(let key in person){
+    console.log(key);  
+};
+
+delete person._age;
+console.log(person);
