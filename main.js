@@ -13,10 +13,18 @@ Object.freeze(book);
 book.title = "Harry Potter and the Philosopher's Stone"
 console.log(book.title);
 
+const bookCopy = Object.assign ({}, book);
+console.log(bookCopy);
+
+
 Object.seal(book);
 
 delete book.author;
 console.log(book);
+
+delete bookCopy;
+console.log(book);
+
 
 
 
