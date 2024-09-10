@@ -1,18 +1,20 @@
-const car = {
-    brand: "AUDI",
-    model: "A6",
-    year: "2010"
+const book = {
+    title: "Reactivation",
+    author: "Kulyk Stepan"
 };
 
-Object.preventExtensions(car);
+Object.freeze(book);
 
-car.color = "black";
-console.log(car);
+book.title = "Harry Potter and the Philosopher's Stone"
+console.log(book.title);
 
-const carCopy = Object.assign({}, car);
-Object.seal(carCopy);
+book.pages = 350;
+console.log(book.pages);
 
-delete carCopy.year;
-console.log(carCopy);
+delete book.author;
+console.log(book);
+
+
+
 
 
